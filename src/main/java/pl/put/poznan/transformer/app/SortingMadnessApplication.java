@@ -9,6 +9,5 @@ public class SortingMadnessApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SortingMadnessApplication.class, args);
-	System.out.println("Wal sie wojtek");
     }
 }

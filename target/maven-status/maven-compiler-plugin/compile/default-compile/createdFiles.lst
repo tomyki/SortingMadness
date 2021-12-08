@@ -1,3 +1,7 @@
-pl\put\poznan\transformer\app\TextTransformerApplication.class
-pl\put\poznan\transformer\rest\TextTransformerController.class
-pl\put\poznan\transformer\logic\TextTransformer.class
+pl\put\poznan\transformer\logic\SelectionSort.class
+pl\put\poznan\transformer\logic\MergeSort.class
+pl\put\poznan\transformer\logic\BubbleSort.class
+pl\put\poznan\transformer\logic\InsertionSort.class
+pl\put\poznan\transformer\app\SortingMadnessApplication.class
+pl\put\poznan\transformer\logic\SortingMadness.class
+pl\put\poznan\transformer\rest\SortingMadnessController.class

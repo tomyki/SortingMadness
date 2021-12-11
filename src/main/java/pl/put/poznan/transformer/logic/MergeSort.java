@@ -9,6 +9,7 @@ public class MergeSort {
     public long executionTime;
     public String lista;
 
+
     public MergeSort(String lista, String porzadek, String typ) {
         long millisActualTime = System.currentTimeMillis();
         if (typ.equals("string")) {

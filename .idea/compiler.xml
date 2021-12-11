@@ -6,15 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="SortingMadness" />
         <module name="ioprojectarchitecture" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ioprojectarchitecture" target="11" />
+      <module name="SortingMadness" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SortingMadness" options="-parameters" />
       <module name="ioprojectarchitecture" options="-parameters" />
     </option>
   </component>

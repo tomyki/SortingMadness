@@ -33,17 +33,17 @@ public class SortingMadness {
                             String rodzajsort, String porzadek, String liczIteracji) {
         String wynik = "gluptas";
         long czas = 999999;
-
+        int iteracje = Integer.parseInt(liczIteracji);
 
         switch (rodzajsort) {
             case "s": {
-                SelectionSort sortowanie = new SelectionSort(lista, porzadek, typ);
+                SelectionSort sortowanie = new SelectionSort(lista, porzadek, typ, iteracje);
                 wynik = sortowanie.lista;
                 System.out.println("SelectionSort z czasem: "+sortowanie.executionTime);
                 break;
             }
             case "b": {
-                BubbleSort sortowanie = new BubbleSort(lista, porzadek, typ);
+                BubbleSort sortowanie = new BubbleSort(lista, porzadek, typ,iteracje);
                 wynik = sortowanie.lista;
                 czas = sortowanie.executionTime;
                 System.out.println("BubbleSort z czasem: "+sortowanie.executionTime);
@@ -57,17 +57,17 @@ public class SortingMadness {
                 break;
             }
             case "i": {
-                InsertionSort sortowanie = new InsertionSort(lista, porzadek, typ);
+                InsertionSort sortowanie = new InsertionSort(lista, porzadek, typ,iteracje);
                 wynik = sortowanie.lista;
                 czas = sortowanie.executionTime;
                 System.out.println("InsertionSort z czasem: "+sortowanie.executionTime);
                 break;
             }
             case "a": {
-                SelectionSort sortowanieS = new SelectionSort(lista, porzadek, typ);
-                BubbleSort sortowanieB = new BubbleSort(lista, porzadek, typ);
+                SelectionSort sortowanieS = new SelectionSort(lista, porzadek, typ, iteracje);
+                BubbleSort sortowanieB = new BubbleSort(lista, porzadek, typ, iteracje);
                 MergeSort sortowanieM = new MergeSort(lista, porzadek, typ);
-                InsertionSort sortowanieI = new InsertionSort(lista, porzadek, typ);
+                InsertionSort sortowanieI = new InsertionSort(lista, porzadek, typ, iteracje);
                 long[] timesOfSortings = new long[]{sortowanieS.executionTime, sortowanieB.executionTime, sortowanieM.executionTime, sortowanieI.executionTime};
                 switch (findBest(timesOfSortings)) {
                     case 0: {

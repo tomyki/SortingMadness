@@ -4,21 +4,24 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SelectionSort
-{
+public class SelectionSort {
     public long executionTime;
     public String lista;
-    public SelectionSort(String lista, String porzadek, String typ){
+
+    public SelectionSort(String lista, String porzadek, String typ) {
         long millisActualTime = System.currentTimeMillis();
-        if(typ.equals("string")){
+        if (typ.equals("string")) {
             List<String> newText = new ArrayList<String>();
-            for (String s : lista.split("-")) {       newText.add(s); }
+            for (String s : lista.split("-")) {
+                newText.add(s);
+            }
             String[] sorted = this.sortString(newText, porzadek);
             this.lista = Arrays.toString(sorted);
-        }
-        else if(typ.equals("int")){
+        } else if (typ.equals("int")) {
             List<Integer> newText = new ArrayList<Integer>();
-            for (String s : lista.split("-")) {       newText.add(Integer.parseInt(s)); }
+            for (String s : lista.split("-")) {
+                newText.add(Integer.parseInt(s));
+            }
             int[] sorted = this.sort(newText, porzadek);
             this.lista = Arrays.toString(sorted);
         }
@@ -26,19 +29,17 @@ public class SelectionSort
     }
 
 
-    public int[] sort(List<Integer> arra, String dec)
-    {
+    public int[] sort(List<Integer> arra, String dec) {
 
         int[] arr = new int[arra.size()];
-        for(int i = 0; i < arra.size(); i++) arr[i] = arra.get(i);
+        for (int i = 0; i < arra.size(); i++) arr[i] = arra.get(i);
         int n = arr.length;
         // One by one move boundary of unsorted subarray
-        for (int i = 0; i < n-1; i++)
-        {
+        for (int i = 0; i < n - 1; i++) {
             // Find the minimum element in unsorted array
-            if(dec.equals("asc")){
+            if (dec.equals("asc")) {
                 int min_idx = i;
-                for (int j = i+1; j < n; j++)
+                for (int j = i + 1; j < n; j++)
                     if (arr[j] < arr[min_idx])
                         min_idx = j;
 
@@ -48,9 +49,9 @@ public class SelectionSort
                 arr[min_idx] = arr[i];
                 arr[i] = temp;
             }
-            if(dec.equals("desc")){
+            if (dec.equals("desc")) {
                 int min_idx = i;
-                for (int j = i+1; j < n; j++)
+                for (int j = i + 1; j < n; j++)
                     if (arr[j] > arr[min_idx])
                         min_idx = j;
 
@@ -64,31 +65,29 @@ public class SelectionSort
         return arr;
     }
 
-    public String[] sortString(List<String> arra,String dec)
-    {
+    public String[] sortString(List<String> arra, String dec) {
         String[] arr = new String[arra.size()];
-        for(int i = 0; i < arra.size(); i++) arr[i] = arra.get(i);
+        for (int i = 0; i < arra.size(); i++) arr[i] = arra.get(i);
         int n = arr.length;
 
         // One by one move boundary of unsorted subarray
-        for (int i = 0; i < n-1; i++)
-        {
+        for (int i = 0; i < n - 1; i++) {
             // Find the minimum element in unsorted array
-            if(dec.equals("asc")){
+            if (dec.equals("asc")) {
                 int min_idx = i;
-                for (int j = i+1; j < n; j++)
-                    if(arr[j].compareTo(arr[min_idx])<0)
-                        min_idx=j;
+                for (int j = i + 1; j < n; j++)
+                    if (arr[j].compareTo(arr[min_idx]) < 0)
+                        min_idx = j;
                 // Swap the found minimum element with the first
                 // element
                 String temp = arr[min_idx];
                 arr[min_idx] = arr[i];
                 arr[i] = temp;
             }
-            if(dec.equals("desc")){
+            if (dec.equals("desc")) {
                 int min_idx = i;
-                for (int j = i+1; j < n; j++)
-                    if(arr[j].compareTo(arr[min_idx])>0)
+                for (int j = i + 1; j < n; j++)
+                    if (arr[j].compareTo(arr[min_idx]) > 0)
                         min_idx = j;
 
                 // Swap the found minimum element with the first

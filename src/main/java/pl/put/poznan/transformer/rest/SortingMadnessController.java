@@ -1,4 +1,5 @@
 package pl.put.poznan.transformer.rest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -8,15 +9,16 @@ import java.util.Arrays;
 
 
 @RestController
-@RequestMapping("/{lista}/{parametr}/{typ}/{czyobiekt}/{rodzajsort}/{porzadek}/{liczIteracji}") //lista/(po ktorym parametrze)/typ/czy obiekt/rodzaj sortowania(i czy automatycznie)/rosnaco czy malejaco/liczba iteracji(bez to <=0>)
+@RequestMapping("/{lista}/{parametr}/{typ}/{czyobiekt}/{rodzajsort}/{porzadek}/{liczIteracji}")
+//lista/(po ktorym parametrze)/typ/czy obiekt/rodzaj sortowania(i czy automatycznie)/rosnaco czy malejaco/liczba iteracji(bez to <=0>)
 public class SortingMadnessController {
 
     private static final Logger logger = LoggerFactory.getLogger(SortingMadnessController.class);
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public String get(@PathVariable String lista, @PathVariable String parametr, @PathVariable String typ, @PathVariable String czyobiekt,
-                      @PathVariable String rodzajsort,@PathVariable String porzadek,@PathVariable String liczIteracji,
-                              @RequestParam(value="transforms", defaultValue="upper,escape") String[] transforms) {
+                      @PathVariable String rodzajsort, @PathVariable String porzadek, @PathVariable String liczIteracji,
+                      @RequestParam(value = "transforms", defaultValue = "upper,escape") String[] transforms) {
 
         // log the parameters
         logger.debug(lista);
@@ -36,8 +38,8 @@ public class SortingMadnessController {
 
     @RequestMapping(method = RequestMethod.POST, produces = "application/json")
     public String post(@PathVariable String lista, @PathVariable String parametr, @PathVariable String typ, @PathVariable String czyobiekt,
-                       @PathVariable String rodzajsort,@PathVariable String porzadek,@PathVariable String liczIteracji,
-                      @RequestBody String[] transforms) {
+                       @PathVariable String rodzajsort, @PathVariable String porzadek, @PathVariable String liczIteracji,
+                       @RequestBody String[] transforms) {
 
         // log the parameters
         logger.debug(lista);
@@ -54,7 +56,6 @@ public class SortingMadnessController {
         return transformer.transform(lista, parametr, typ, czyobiekt,
                 rodzajsort, porzadek, liczIteracji);
     }
-
 
 
 }

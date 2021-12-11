@@ -8,17 +8,21 @@ public class InsertionSort {
     /*Function to sort array using insertion sort*/
     public long executionTime;
     public String lista;
-    public InsertionSort(String lista, String porzadek, String typ){
+
+    public InsertionSort(String lista, String porzadek, String typ) {
         long millisActualTime = System.currentTimeMillis();
-        if(typ.equals("string")){
+        if (typ.equals("string")) {
             List<String> newText = new ArrayList<String>();
-            for (String s : lista.split("-")) {       newText.add(s); }
+            for (String s : lista.split("-")) {
+                newText.add(s);
+            }
             String[] sorted = this.sortString(newText, porzadek);
             this.lista = Arrays.toString(sorted);
-        }
-        else if(typ.equals("int")){
+        } else if (typ.equals("int")) {
             List<Integer> newText = new ArrayList<Integer>();
-            for (String s : lista.split("-")) {       newText.add(Integer.parseInt(s)); }
+            for (String s : lista.split("-")) {
+                newText.add(Integer.parseInt(s));
+            }
             int[] sorted = this.sort(newText, porzadek);
             this.lista = Arrays.toString(sorted);
         }
@@ -26,13 +30,11 @@ public class InsertionSort {
     }
 
 
-    public int[] sort(List<Integer> arra, String dec)
-    {
+    public int[] sort(List<Integer> arra, String dec) {
         int[] arr = new int[arra.size()];
-        for(int i = 0; i < arra.size(); i++) arr[i] = arra.get(i);
+        for (int i = 0; i < arra.size(); i++) arr[i] = arra.get(i);
         int n = arr.length;
-        if(dec.equals("asc"))
-        {
+        if (dec.equals("asc")) {
             for (int i = 1; i < n; ++i) {
                 int key = arr[i];
                 int j = i - 1;
@@ -47,8 +49,7 @@ public class InsertionSort {
                 arr[j + 1] = key;
             }
         }
-        if(dec.equals("desc"))
-        {
+        if (dec.equals("desc")) {
             for (int i = 1; i < n; ++i) {
                 int key = arr[i];
                 int j = i - 1;
@@ -67,13 +68,11 @@ public class InsertionSort {
         return arr;
     }
 
-    public String[] sortString(List<String> arra,String dec)
-    {
+    public String[] sortString(List<String> arra, String dec) {
         String[] arr = new String[arra.size()];
-        for(int i = 0; i < arra.size(); i++) arr[i] = arra.get(i);
+        for (int i = 0; i < arra.size(); i++) arr[i] = arra.get(i);
         int n = arr.length;
-        if(dec.equals("asc"))
-        {
+        if (dec.equals("asc")) {
             for (int i = 1; i < n; ++i) {
                 String key = arr[i];
                 int j = i - 1;
@@ -81,15 +80,14 @@ public class InsertionSort {
                 /* Move elements of arr[0..i-1], that are
                    greater than key, to one position ahead
                    of their current position */
-                while (j >= 0 && arr[j].compareTo(key)>0) {
+                while (j >= 0 && arr[j].compareTo(key) > 0) {
                     arr[j + 1] = arr[j];
                     j = j - 1;
                 }
                 arr[j + 1] = key;
             }
         }
-        if(dec.equals("desc"))
-        {
+        if (dec.equals("desc")) {
             for (int i = 1; i < n; ++i) {
                 String key = arr[i];
                 int j = i - 1;
@@ -97,7 +95,7 @@ public class InsertionSort {
                 /* Move elements of arr[0..i-1], that are
                    greater than key, to one position ahead
                    of their current position */
-                while (j >= 0 && arr[j].compareTo(key)<0) {
+                while (j >= 0 && arr[j].compareTo(key) < 0) {
                     arr[j + 1] = arr[j];
                     j = j - 1;
                 }

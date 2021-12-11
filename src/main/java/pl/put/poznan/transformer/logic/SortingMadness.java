@@ -19,12 +19,22 @@ public class SortingMadness {
     public String transform(String lista, String parametr, String typ, String czyobiekt,
                             String rodzajsort, String porzadek, String liczIteracji){
         String wynik ="gluptas";
+
+
         if(rodzajsort.equals("s")){
             SelectionSort sortowanie = new SelectionSort(lista, porzadek, typ);
             wynik = sortowanie.lista;
         }
         else if(rodzajsort.equals("b")){
             BubbleSort sortowanie = new BubbleSort(lista, porzadek, typ);
+            wynik = sortowanie.lista;
+        }
+        else if(rodzajsort.equals("m")){
+            MergeSort sortowanie = new MergeSort(lista, porzadek, typ);
+            wynik = sortowanie.lista;
+        }
+        else if(rodzajsort.equals("i")){
+            InsertionSort sortowanie = new InsertionSort(lista, porzadek, typ);
             wynik = sortowanie.lista;
         }
 

@@ -50,7 +50,7 @@ public class SortingMadness {
                 break;
             }
             case "m": {
-                MergeSort sortowanie = new MergeSort(lista, porzadek, typ);
+                MergeSort sortowanie = new MergeSort(lista, porzadek, typ, iteracje);
                 wynik = sortowanie.lista;
                 czas = sortowanie.executionTime;
                 System.out.println("MergeSort z czasem: "+sortowanie.executionTime);
@@ -66,7 +66,7 @@ public class SortingMadness {
             case "a": {
                 SelectionSort sortowanieS = new SelectionSort(lista, porzadek, typ, iteracje);
                 BubbleSort sortowanieB = new BubbleSort(lista, porzadek, typ, iteracje);
-                MergeSort sortowanieM = new MergeSort(lista, porzadek, typ);
+                MergeSort sortowanieM = new MergeSort(lista, porzadek, typ, iteracje);
                 InsertionSort sortowanieI = new InsertionSort(lista, porzadek, typ, iteracje);
                 long[] timesOfSortings = new long[]{sortowanieS.executionTime, sortowanieB.executionTime, sortowanieM.executionTime, sortowanieI.executionTime};
                 switch (findBest(timesOfSortings)) {

@@ -18,22 +18,21 @@ public class SortingMadness {
 
     public String transform(String lista, String parametr, String typ, String czyobiekt,
                             String rodzajsort, String porzadek, String liczIteracji){
-        System.out.println(lista);
-        System.out.println(parametr);
-        System.out.println(typ);
-        System.out.println(czyobiekt);
-        System.out.println(rodzajsort);
-        System.out.println(porzadek);
-        System.out.println(liczIteracji);
-        // of course, normally it would do something based on the transforms
-        /*BubbleSort sortowanie = new BubbleSort();
-        List<Integer> newText = new ArrayList<Integer>();
-        for (String s : text.split("-")) {       newText.add(Integer.parseInt(s)); }
-        int[] dupa = sortowanie.bubbleSort(newText, "asc");
+        String wynik ="gluptas";
+        if(rodzajsort.equals("s")){
+            SelectionSort sortowanie = new SelectionSort(lista, porzadek, typ);
+            wynik = sortowanie.lista;
+        }
+        else if(rodzajsort.equals("b")){
+            BubbleSort sortowanie = new BubbleSort(lista, porzadek, typ);
+            wynik = sortowanie.lista;
+        }
 
-        sortowanie.printArray(dupa);
-        text = dupa.toString();*/
 
-        return lista;
+
+        System.out.println(wynik);
+
+
+        return wynik;
     }
 }

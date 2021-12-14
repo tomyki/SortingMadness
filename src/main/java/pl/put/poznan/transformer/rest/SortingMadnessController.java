@@ -18,7 +18,7 @@ public class SortingMadnessController {
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public String get(@PathVariable String lista, @PathVariable String parametr, @PathVariable String typ, @PathVariable String czyobiekt,
                       @PathVariable String rodzajsort, @PathVariable String porzadek, @PathVariable String liczIteracji,
-                      @RequestParam(value = "transforms", defaultValue = "upper,escape") String[] transforms) {
+                      @RequestParam(value = "transforms", defaultValue = "upper,escape") String[] transforms) throws Exception {
 
         // log the parameters
         logger.debug(lista);
@@ -39,7 +39,7 @@ public class SortingMadnessController {
     @RequestMapping(method = RequestMethod.POST, produces = "application/json")
     public String post(@PathVariable String lista, @PathVariable String parametr, @PathVariable String typ, @PathVariable String czyobiekt,
                        @PathVariable String rodzajsort, @PathVariable String porzadek, @PathVariable String liczIteracji,
-                       @RequestBody String[] transforms) {
+                       @RequestBody String[] transforms) throws Exception {
 
         // log the parameters
         logger.debug(lista);

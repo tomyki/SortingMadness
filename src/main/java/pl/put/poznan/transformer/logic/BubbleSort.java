@@ -4,10 +4,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Klasa reprezentująca algorytm sortowania bąbelkowego
+ */
 public class BubbleSort {
+    /**
+     * Zmienna typu long, ktora bedzie przechowywac czas wykonania sortowania
+     */
     public long executionTime;
+    /**
+     * Zmienna typu String, ktora bedzie przechowywac posortowana liste
+     */
     public String lista;
 
+    /**
+     * Konstruktor, który dla podanych argumentow przydziela do zmiennej lista posrtowana juz liste oraz liczy czas wykonania i przydziela go do zmiennej executionTime
+     * @param lista lista elementow do posortowania
+     * @param porzadek jezeli "asc" to sortujemy rosnaco, jeżeli "desc" to malejaco
+     * @param typ typ danych w liscie
+     * @param iteracje liczba iteracji, po których następuje wymuszenie zakończenia działania algorytmu sortującego (dla {@literal <=0} działa do końca)
+     */
     public BubbleSort(String lista, String porzadek, String typ, int iteracje) {
         long millisActualTime = System.currentTimeMillis();
         if (typ.equals("string")) {
@@ -28,6 +44,13 @@ public class BubbleSort {
         this.executionTime = System.currentTimeMillis() - millisActualTime;
     }
 
+    /**
+     * Funkcja sortująca tablice liczb za pomocą algorytmu sortowania bąbelkowego
+     * @param arra lista elementów wejściowych
+     * @param dec porządek sortowania("asc"/"desc")
+     * @param iteracje liczba iteracji, po których następuje wymuszenie zakończenia działania algorytmu sortującego (dla {@literal <=0} działa do końca)
+     * @return posortowana lista typu int
+     */
     public int[] bubbleSort(List<Integer> arra, String dec, int iteracje) {
         int[] arr = new int[arra.size()];
         for (int i = 0; i < arra.size(); i++) arr[i] = arra.get(i);
@@ -93,7 +116,13 @@ public class BubbleSort {
         }
         return arr;
     }
-
+    /**
+     * Funkcja sortująca tablice łańcuchów znaków za pomocą algorytmu sortowania bąbelkowego
+     * @param arra lista elementów wejściowych
+     * @param dec porządek sortowania("asc"/"desc")
+     * @param iteracje liczba iteracji, po których następuje wymuszenie zakończenia działania algorytmu sortującego (dla {@literal <=0} działa do końca)
+     * @return posortowana lista typu String
+     */
     public String[] bubbleSortString(List<String> arra, String dec, int iteracje) {
         String[] arr = new String[arra.size()];
         for (int i = 0; i < arra.size(); i++) arr[i] = arra.get(i);

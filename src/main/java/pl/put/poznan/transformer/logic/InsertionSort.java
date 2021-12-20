@@ -14,14 +14,14 @@ public class InsertionSort {
 
         if (typ.equals("string")) {
             List<String> newText = new ArrayList<String>();
-            for (String s : lista.split("-")) {
+            for (String s : lista.split(",")) {
                 newText.add(s);
             }
             String[] sorted = this.sortString(newText, porzadek, iteracje);
             this.lista = Arrays.toString(sorted);
         } else if (typ.equals("int")) {
             List<Integer> newText = new ArrayList<Integer>();
-            for (String s : lista.split("-")) {
+            for (String s : lista.split(",")) {
                 newText.add(Integer.parseInt(s));
             }
             int[] sorted = this.sort(newText, porzadek, iteracje);
